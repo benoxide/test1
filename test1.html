@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Testing Options</title>
+	
+</head>
+<script src = "jquery.min.js"></script>
+<tr> <td>click here for testing</td> </tr> 
+<a href="../untitled\index.html">Logout</a>
+
+
+
+
+    
+	 
+    
+	
+
+
+<script>
+    function getVal() {
+
+        $.ajax({
+                type:"POST",
+                url: "api_decision.php",
+                data : {
+                    sub_id : 1,
+					obj_id : 1,
+					operation : "read"
+                },
+                success:function (data) {
+                    
+                    alert("success");
+					//location.href = "hello.html";
+					$("#output").html(data);
+                    //console.log(data);
+
+                },
+
+
+            }
+        )
+
+    };
+
+</script>
+</html>
