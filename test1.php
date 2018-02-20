@@ -12,7 +12,7 @@ $(document).ready(function(){
 alert("1");
   $.ajax({
                 type:"POST",
-                url: "api_1.php",
+                url: "https://security-abac.000webhostapp.com/api_1.php",
 				datatype: "JSON",
                 data : {
                     sub_id : <?php  session_start(); echo $_SESSION["user"];?>,
