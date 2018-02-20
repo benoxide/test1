@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Use the HTTP method POST to send data to the PHP file.</h2>
+
+<p id="demo"></p>
+<script src = "jquery.min.js"></script>
+<script>
+var obj, dbParam, xmlhttp, myObj, x, txt = "";
+obj = { "sub_id":1 };
+dbParam = JSON.stringify(obj);
+alert("1");
+xmlhttp = new XMLHttpRequest();
+alert("2");
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		alert("3");
+        myObj = JSON.parse(this.responseText);
+		console.log(myObj);
+        for (x in myObj) {
+            txt += myObj[x].name + "<br>";
+        }
+        document.getElementById("demo").innerHTML = txt;
+    }
+};
+xmlhttp.open("POST", "../untitled\api_1.php", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+alert("4");
+
+</script>
+
+<p>Try changing the "table" property from "customers" to "products".</p>
+
+</body>
+</html>

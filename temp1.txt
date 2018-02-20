@@ -1,0 +1,14 @@
+					var nam  = "";
+					var next1=0;
+					var pos = 0;
+					var links = "";
+					while(data.indexOf(",",i)!= -1)
+					{
+					pos = data.indexOf(",",i)!
+					nam = data.slice(i+2, pos-2);
+					next1 = data.indexOf(",",pos+1)
+					links = data.slice(pos+2,next1-2 );
+					i=next1;
+					document.write("<a href="+links+">"+nam"</a><br>");
+					
+                    }

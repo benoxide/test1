@@ -5,7 +5,19 @@
 </head>
 <script src = "jquery.min.js"></script>
 <tr> <td>click here for testing</td> </tr> 
-<a href="http://security-project1.192.168.99.100.nip.io">Logout</a>
+
+<div id = "output"></div>
+<ul>
+    <li><a>Home</a></li>
+    <li><a>Create Attributes</a>
+        <ul>
+            <li><a href = "subintattrib.html">Numeric Attributes</a></li>
+            <li><a href="charsubattrib.html">String Attributes</a></li>
+        </ul>
+    </li>
+	</ul>
+
+
 
 
 
@@ -17,30 +29,30 @@
 
 
 <script>
-    function getVal() {
-
-        $.ajax({
+$(document).ready(function(){
+alert("1");
+  $.ajax({
                 type:"POST",
-                url: "api_decision.php",
+                url: "api_1.php",
+				datatype: "JSON",
                 data : {
                     sub_id : 1,
-					obj_id : 1,
-					operation : "read"
+					
                 },
                 success:function (data) {
                     
                     alert("success");
 					//location.href = "hello.html";
 					$("#output").html(data);
-                    //console.log(data);
+                    console.log(data);
 
                 },
 
 
             }
         )
-
-    };
+});
+    
 
 </script>
 </html>
